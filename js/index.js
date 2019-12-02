@@ -7,6 +7,7 @@ const siteContent = {
     "nav-item-5": "About",
     "nav-item-6": "Contact",
     "nav-item-7": "Test",
+    "nav-item-8": "Careers",
     "img-src": "img/logo.png"
   },
   "cta": {
@@ -46,14 +47,12 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 let parentNav = document.querySelector('nav');
 const newNav1 = document.createElement('a')
 const newNav2 = document.createElement('a')
-newNav1.textContent="Contact";
-newNav2.textContent="Test";
 parentNav.append(newNav1);
 parentNav.append(newNav2);
 
 let headerNav = document.querySelectorAll('nav a');
 headerNav.forEach (function(link,index){
-  link.textContent = siteContent["nav"][`nav-item-${[index]}`]
+  link.textContent = siteContent["nav"][`nav-item-${[index+1]}`]
   link.style.color = "green";
 }
 );
