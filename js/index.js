@@ -6,6 +6,7 @@ const siteContent = {
     "nav-item-4": "Features",
     "nav-item-5": "About",
     "nav-item-6": "Contact",
+    "nav-item-7": "Test",
     "img-src": "img/logo.png"
   },
   "cta": {
@@ -42,11 +43,21 @@ let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 //Nav Section
+let parentNav = document.querySelector('nav');
+const newNav1 = document.createElement('a')
+const newNav2 = document.createElement('a')
+newNav1.textContent="Contact";
+newNav2.textContent="Test";
+parentNav.append(newNav1);
+parentNav.append(newNav2);
+
 let headerNav = document.querySelectorAll('nav a');
 headerNav.forEach (function(link,index){
   link.textContent = siteContent["nav"][`nav-item-${[index]}`]
+  link.style.color = "green";
 }
 );
+
 
 //CTA Section
 let ctaHeading = document.querySelector('h1');
@@ -113,3 +124,4 @@ contactP3.textContent = siteContent["contact"]["email"]
 // Footer
 let footerP = document.querySelector('footer p');
 footerP.textContent = siteContent["footer"]["copyright"]
+
